@@ -10,7 +10,6 @@ export default function Hero() {
   const containerRef = useRef(null);
   const mouseRef = useRef({ x: 0, y: 0 });
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
-  const [now, setNow] = useState("");
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -22,17 +21,6 @@ export default function Hero() {
 
   const springX = useSpring(0, { stiffness: 60, damping: 20 });
   const springY = useSpring(0, { stiffness: 60, damping: 20 });
-
-  useEffect(() => {
-    const t = setInterval(() => {
-      const d = new Date();
-      const hh = String(d.getUTCHours()).padStart(2, "0");
-      const mm = String(d.getUTCMinutes()).padStart(2, "0");
-      const ss = String(d.getUTCSeconds()).padStart(2, "0");
-      setNow(`${hh}:${mm}:${ss} UTC`);
-    }, 1000);
-    return () => clearInterval(t);
-  }, []);
 
   useEffect(() => {
     const onMove = (e) => {
@@ -103,9 +91,6 @@ export default function Hero() {
         className="absolute top-24 md:top-28 left-6 md:left-10 right-6 md:right-10 flex items-center justify-between text-mute font-mono text-[11px] tracking-widest z-20"
       >
         <span data-testid="meta-index">INDEX / 001 — MULTIDISCIPLINARY</span>
-        <span className="flex items-center gap-2" data-testid="meta-clock">
-          <span className="blink-dot" /> LIVE {now}
-        </span>
       </motion.div>
 
       <div className="absolute inset-0 flex flex-col justify-end pb-24 md:pb-28 px-6 md:px-10 z-30">
@@ -117,7 +102,7 @@ export default function Hero() {
             className="font-mono text-xs md:text-sm tracking-[0.35em] text-signal-yellow mb-6"
             data-testid="hero-eyebrow"
           >
-            <span className="text-mute">/</span> PORTFOLIO — 2020 → 2026
+            <span className="text-mute">/</span> PORTFOLIO 2026
           </motion.p>
 
           <KineticText
@@ -135,17 +120,6 @@ export default function Hero() {
               lines={["MENTO."]}
               delay={0.8}
             />
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.4, duration: 0.6 }}
-              className="font-mono text-[10px] md:text-xs text-bone/60 tracking-widest max-w-[220px] pb-4 md:pb-6"
-            >
-              [PT-BR] SUBSTANTIVO. FEMININO.<br />
-              AGENTE DA MUDANÇA VISUAL —<br />
-              OPERANDO ENTRE O CAOS &amp;<br />
-              A CLAREZA DESDE MMXX.
-            </motion.span>
           </div>
         </div>
 

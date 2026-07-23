@@ -2,10 +2,14 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { ArrowUpRight, Instagram, Mail, Linkedin } from "lucide-react";
 
+const EMAIL = "nascimentoclaralmeida@gmail.com";
+const PHONE = "(11) 93749-9903";
+const WHATSAPP = "5511937499903";
+
 const socials = [
   { label: "INSTAGRAM", href: "#", icon: Instagram },
   { label: "LINKEDIN", href: "#", icon: Linkedin },
-  { label: "E-MAIL", href: "mailto:clara@nascimento.studio", icon: Mail },
+  { label: "E-MAIL", href: `mailto:${EMAIL}`, icon: Mail },
 ];
 
 export default function Contact() {
@@ -23,7 +27,7 @@ export default function Contact() {
       </div>
 
       <a
-        href="mailto:clara@nascimento.studio"
+        href={`mailto:${EMAIL}`}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         className="relative block group px-6 md:px-10 pb-4 md:pb-10"
@@ -57,7 +61,10 @@ export default function Contact() {
               strokeWidth={1}
             />
             <span className={`font-mono text-[11px] tracking-widest ${hover ? "text-ink" : "text-mute"}`}>
-              CLARA@NASCIMENTO.STUDIO
+              {EMAIL.toUpperCase()}
+            </span>
+            <span className={`font-mono text-[11px] tracking-widest ${hover ? "text-ink" : "text-mute"}`}>
+              {PHONE}
             </span>
           </div>
         </div>
@@ -65,8 +72,8 @@ export default function Contact() {
 
       <footer className="border-t border-bone/15 mt-4 md:mt-6 px-6 md:px-10 py-8 md:py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="font-mono text-[11px] tracking-widest text-mute">
-          <p>SÃO PAULO, BRASIL — 23°32'S 46°38'W</p>
-          <p className="mt-1">OPEN FOR COMMISSIONS Q1 → Q3 / 2026</p>
+          <p>CURITIBA, BRASIL</p>
+          <p className="mt-1">OPEN FOR COMMISSIONS</p>
         </div>
         <ul className="flex items-center gap-6">
           {socials.map((s) => (
@@ -82,9 +89,14 @@ export default function Contact() {
             </li>
           ))}
         </ul>
-        <p className="font-mono text-[11px] tracking-widest text-mute">
-          © MMXXVI — CLARA NASCIMENTO STUDIO
-        </p>
+        <div className="font-mono text-[11px] tracking-widest text-mute flex flex-col md:flex-row gap-2 md:gap-6">
+          <a href={`https://wa.me/${WHATSAPP}`} className="hover:text-signal-yellow transition-colors duration-300">
+            WHATSAPP {PHONE}
+          </a>
+          <a href={`mailto:${EMAIL}`} className="hover:text-signal-yellow transition-colors duration-300">
+            {EMAIL}
+          </a>
+        </div>
       </footer>
     </section>
   );

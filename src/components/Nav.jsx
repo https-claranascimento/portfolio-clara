@@ -21,7 +21,7 @@ export default function Nav() {
         className="font-mono text-xs md:text-sm tracking-widest text-bone hover:text-signal-yellow transition-colors duration-300"
         data-testid="nav-logo"
       >
-        CLARA<span className="text-signal-red">.</span>NASCIMENTO
+/ PORTFOLIO 2026
       </a>
       <nav className="hidden md:flex items-center gap-8">
         {links.map((l) => (

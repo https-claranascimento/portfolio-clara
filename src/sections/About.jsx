@@ -4,31 +4,24 @@ import { useRef } from "react";
 const chapters = [
   {
     n: "01",
-    title: "A VERDADE",
+    title: "O DESIGN",
     color: "text-signal-yellow",
     body:
-      "Design não é decoração. É pensamento tornado matéria. Cada cor, cada peso, cada centímetro de espaço em branco carrega uma decisão. Se não carregar — apague.",
+      "Design não é apenas decoração. É pensamento externalizado. Cada cor, cada peso, cada centímetro de espaço em branco carrega uma escolha.",
   },
   {
     n: "02",
     title: "O MÉTODO",
     color: "text-signal-red",
     body:
-      "Investigo antes de desenhar. Rascunho antes de renderizar. Erro cedo, erro barato, erro de novo — até que a forma finalmente pare de mentir. O processo é o produto.",
+      "Estudar e elaborar antes de desenhar. Rascunho antes de renderizar. Errar faz parte da construção do projeto — até que o produto tome forma.",
   },
   {
     n: "03",
     title: "O CAMPO",
     color: "text-signal-yellow",
     body:
-      "Trabalho em identidades visuais, embalagens, produtos digitais e experiências físicas. Multidisciplinar por convicção — nunca por indecisão.",
-  },
-  {
-    n: "04",
-    title: "O CÓDIGO",
-    color: "text-signal-red",
-    body:
-      "Amarelo é urgência. Vermelho é sangue. Preto é a moldura. Trabalho com cores que gritam porque a maioria dos briefs sussurra.",
+      "Meu trabalho é focado no design gráfico, transformando conceitos e ideias em algo palpável, visual e que transmita a ideia.",
   },
 ];
 
@@ -52,9 +45,6 @@ export default function About() {
           <span className="inline-block w-8 h-px bg-signal-yellow" />
           <span>[ SEÇÃO 02 ] — MANIFESTO</span>
         </div>
-        <p className="font-mono text-[11px] tracking-widest text-mute text-right max-w-[280px]">
-          QUATRO CAPÍTULOS.<br />UMA POSTURA.
-        </p>
       </div>
 
       <div className="px-6 md:px-10 mb-24 md:mb-36">
@@ -68,7 +58,7 @@ export default function About() {
         >
           EU NÃO <span className="text-outline-yellow">DECORO</span>.
           <br />
-          EU <span className="text-signal-red">CONFRONTO</span>.
+          EU <span className="text-signal-red">CONSTRUO</span>.
         </motion.h2>
       </div>
 
@@ -78,7 +68,6 @@ export default function About() {
             "md:col-start-1 md:col-span-6",
             "md:col-start-8 md:col-span-5 md:mt-24",
             "md:col-start-2 md:col-span-5",
-            "md:col-start-8 md:col-span-4 md:mt-16",
           ];
           return (
             <motion.article
@@ -101,10 +90,6 @@ export default function About() {
               <p className="font-mono text-sm md:text-[15px] leading-relaxed text-bone/75 max-w-[42ch]">
                 {c.body}
               </p>
-              <div className="mt-6 flex items-center gap-3 font-mono text-[10px] tracking-widest text-mute">
-                <span className="w-6 h-px bg-mute" />
-                CAPÍTULO {c.n} / 04
-              </div>
             </motion.article>
           );
         })}
