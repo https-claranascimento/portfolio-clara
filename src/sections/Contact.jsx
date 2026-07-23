@@ -96,9 +96,6 @@ export default function Contact() {
             <MessageCircle className="w-4 h-4" />
             {PHONE}
           </a>
-          <a href={`mailto:${EMAIL}`} className="hover:text-signal-yellow transition-colors duration-300">
-            {EMAIL}
-          </a>
         </div>
       </footer>
     </section>
