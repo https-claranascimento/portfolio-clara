@@ -7,7 +7,7 @@ const PHONE = "(11) 93749-9903";
 const WHATSAPP = "5511937499903";
 
 const socials = [
-  { label: "E-MAIL", href: `mailto:${EMAIL}`, icon: Mail },
+  { label: EMAIL, href: `mailto:${EMAIL}`, icon: Mail },
 ];
 
 export default function Contact() {
@@ -94,7 +94,7 @@ export default function Contact() {
             data-testid="social-whatsapp"
           >
             <MessageCircle className="w-4 h-4" />
-            WHATSAPP {PHONE}
+            {PHONE}
           </a>
           <a href={`mailto:${EMAIL}`} className="hover:text-signal-yellow transition-colors duration-300">
             {EMAIL}

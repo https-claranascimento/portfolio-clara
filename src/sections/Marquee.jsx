@@ -24,7 +24,7 @@ export default function EditorialMarquee() {
       aria-label="editorial marquee"
     >
       <Marquee gradient={false} speed={40} pauseOnHover autoFill direction="left">
-        <Item>MULTIDISCIPLINARY DESIGNER</Item>
+        <Item>DESIGNER INICIANTE</Item>
         <Star />
         <Item invert>ILLUSTRATOR , FIGMA, CAPCUT, CANVA, ETC</Item>
         <Star />

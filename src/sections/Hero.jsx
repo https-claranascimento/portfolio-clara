@@ -90,7 +90,7 @@ export default function Hero() {
         transition={{ delay: 1.2, duration: 0.6 }}
         className="absolute top-24 md:top-28 left-6 md:left-10 right-6 md:right-10 flex items-center justify-between text-mute font-mono text-[11px] tracking-widest z-20"
       >
-        <span data-testid="meta-index">INDEX / 001 — MULTIDISCIPLINARY</span>
+        <span data-testid="meta-index">INDEX / 001 — DESIGNER INICIANTE</span>
       </motion.div>
 
       <div className="absolute inset-0 flex flex-col justify-end pb-24 md:pb-28 px-6 md:px-10 z-30">
