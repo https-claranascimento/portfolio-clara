@@ -1,14 +1,12 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ArrowUpRight, Instagram, Mail, Linkedin } from "lucide-react";
+import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
 
 const EMAIL = "nascimentoclaralmeida@gmail.com";
 const PHONE = "(11) 93749-9903";
 const WHATSAPP = "5511937499903";
 
 const socials = [
-  { label: "INSTAGRAM", href: "#", icon: Instagram },
-  { label: "LINKEDIN", href: "#", icon: Linkedin },
   { label: "E-MAIL", href: `mailto:${EMAIL}`, icon: Mail },
 ];
 
@@ -89,8 +87,13 @@ export default function Contact() {
             </li>
           ))}
         </ul>
-        <div className="font-mono text-[11px] tracking-widest text-mute flex flex-col md:flex-row gap-2 md:gap-6">
-          <a href={`https://wa.me/${WHATSAPP}`} className="hover:text-signal-yellow transition-colors duration-300">
+        <div className="font-mono text-[11px] tracking-widest text-mute flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
+          <a
+            href={`https://wa.me/${WHATSAPP}`}
+            className="hover:text-signal-yellow transition-colors duration-300 inline-flex items-center gap-2"
+            data-testid="social-whatsapp"
+          >
+            <MessageCircle className="w-4 h-4" />
             WHATSAPP {PHONE}
           </a>
           <a href={`mailto:${EMAIL}`} className="hover:text-signal-yellow transition-colors duration-300">

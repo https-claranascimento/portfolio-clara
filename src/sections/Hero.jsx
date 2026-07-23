@@ -109,18 +109,16 @@ export default function Hero() {
             as="h1"
             testId="hero-title"
             className="font-display uppercase text-bone text-[19vw] md:text-[15vw] lg:text-[13.5vw] leading-[0.82]"
-            lines={["CLARA", "NASCI—"]}
+            lines={["CLARA"]}
             delay={0.5}
           />
-          <div className="flex items-end gap-6 flex-wrap">
-            <KineticText
-              as="h1"
-              testId="hero-title-2"
-              className="font-display uppercase text-signal-yellow text-[19vw] md:text-[15vw] lg:text-[13.5vw] leading-[0.82]"
-              lines={["MENTO."]}
-              delay={0.8}
-            />
-          </div>
+          <KineticText
+            as="h1"
+            testId="hero-title-2"
+            className="font-display uppercase text-signal-yellow text-[19vw] md:text-[15vw] lg:text-[13.5vw] leading-[0.82]"
+            lines={["NASCIMENTO."]}
+            delay={0.8}
+          />
         </div>
 
         <motion.div

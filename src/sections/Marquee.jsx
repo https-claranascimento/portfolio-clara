@@ -26,9 +26,7 @@ export default function EditorialMarquee() {
       <Marquee gradient={false} speed={40} pauseOnHover autoFill direction="left">
         <Item>MULTIDISCIPLINARY DESIGNER</Item>
         <Star />
-        <Item invert>VISUAL TERRORIST</Item>
-        <Star />
-        <Item>EXPERIMENTALIST</Item>
+        <Item invert>ILLUSTRATOR , FIGMA, CAPCUT, CANVA, ETC</Item>
         <Star />
       </Marquee>
     </section>
