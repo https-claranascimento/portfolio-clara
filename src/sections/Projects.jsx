@@ -5,39 +5,33 @@ import { ArrowUpRight } from "lucide-react";
 const projects = [
   {
     n: "01",
-    title: "SOL & OSSO",
+    title: "ANUNCIO LIVE GT PREMIUM WEEK",
     kind: "Identidade Visual • Direção de Arte",
-    year: "2024",
-    tag: "GRÁFICO",
-    tone: "yellow",
-    image:
-      "https://images.unsplash.com/photo-1619632973808-4acf8041df42?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwyfHx2aWJyYW50JTIweWVsbG93JTIwcmVkJTIwcG9zdGVyJTIwZGVzaWduJTIwdHlwb2dyYXBoeXxlbnwwfHx8fDE3ODQ3NTg0MDR8MA&ixlib=rb-4.1.0&q=85",
+    year: "2026",
+    tag: "CAMPANHA",
+    images: ["/images/Group_310.png"],
     excerpt:
-      "Sistema de identidade tipográfica para restaurante autoral em São Paulo. Vermelho sangue, cardápio como cartaz.",
+      "Identidade visual para campanha de conteúdo e relacionamento com corretores. Formas modulares, cores vibrantes e linguagem direta para comunicar ritmo, movimento e oportunidade.",
   },
   {
     n: "02",
-    title: "OBJETO / 03",
-    kind: "Design de Produto • Iluminação",
-    year: "2023",
-    tag: "PRODUTO",
-    tone: "red",
-    image:
-      "https://images.unsplash.com/photo-1775938327973-96783de0967d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBwcm9kdWN0JTIwZGVzaWduJTIwaW5kdXN0cmlhbHxlbnwwfHx8fDE3ODQ3NTgzOTJ8MA&ixlib=rb-4.1.0&q=85",
+    title: "STORIES DE INSTAGRAM",
+    kind: "Social Media • Comunicação Comercial",
+    year: "2026",
+    tag: "SOCIAL MEDIA",
+    images: ["/images/Instagram_story_-_33.png", "/images/Instagram_story_-_7.png"],
     excerpt:
-      "Luminária monolítica de metal dobrado. Feita para durar mais que quem a comprou. Edição limitada de 30 peças.",
+      "Conteúdo de relacionamento e comunicação comercial para aproximar corretores do produto, traduzindo sofisticação, oportunidade e diferenciais em uma linguagem clara e estratégica.",
   },
   {
     n: "03",
-    title: "COLETIVA OS",
-    kind: "Produto Digital • UI / UX",
-    year: "2025",
-    tag: "UI / UX",
-    tone: "yellow",
-    image:
-      "https://images.pexels.com/photos/27141307/pexels-photo-27141307.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    title: "CASACOR",
+    kind: "Campanha de Incentivo • Ativação de Marca",
+    year: "2026",
+    tag: "CAMPANHA",
+    images: ["/images/Group_53.png"],
     excerpt:
-      "Plataforma para organizações coletivas de trabalho criativo. Interface brutalista, fluxos escondidos até que a mão os revele.",
+      "Campanha de incentivo criada para transformar visita, produção de conteúdo e engajamento em uma experiência de marca com potencial de mobilização.",
   },
 ];
 
@@ -47,16 +41,11 @@ function ProjectCard({ project, i }) {
     target: ref,
     offset: ["start end", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [60, -60]);
+  const y = useTransform(scrollYProgress, [0, 1], [40, -40]);
   const scale = useTransform(scrollYProgress, [0, 1], [0.95, 1.05]);
 
-  const onMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    e.currentTarget.style.setProperty("--mx", `${e.clientX - rect.left}px`);
-    e.currentTarget.style.setProperty("--my", `${e.clientY - rect.top}px`);
-  };
-
   const isLeft = i % 2 === 0;
+  const isDual = project.images.length === 2;
 
   return (
     <motion.article
@@ -65,18 +54,21 @@ function ProjectCard({ project, i }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-      className={`grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-end mb-24 md:mb-40`}
+      className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-end mb-24 md:mb-40"
       data-testid={`project-${project.n}`}
     >
+      {/* Text block */}
       <div
-        className={`md:col-span-4 ${isLeft ? "md:order-2 md:col-start-9" : "md:order-1 md:col-start-1"} order-2 flex flex-col gap-5`}
+        className={`md:col-span-4 ${
+          isLeft ? "md:order-2 md:col-start-9" : "md:order-1 md:col-start-1"
+        } order-2 flex flex-col gap-5`}
       >
         <div className="flex items-center justify-between font-mono text-[11px] tracking-widest text-mute">
           <span>[ {project.n} / 03 ]</span>
           <span className="text-signal-yellow">{project.tag}</span>
         </div>
         <h3
-          className="font-display uppercase text-5xl md:text-6xl text-bone leading-[0.9]"
+          className="font-display uppercase text-4xl md:text-5xl text-bone leading-[0.95]"
           data-testid={`project-title-${project.n}`}
         >
           {project.title}
@@ -98,32 +90,50 @@ function ProjectCard({ project, i }) {
         </div>
       </div>
 
+      {/* Image block */}
       <motion.div
         style={{ scale }}
-        className={`md:col-span-8 ${isLeft ? "md:order-1 md:col-start-1" : "md:order-2 md:col-start-5"} order-1`}
+        className={`md:col-span-8 ${
+          isLeft ? "md:order-1 md:col-start-1" : "md:order-2 md:col-start-5"
+        } order-1`}
       >
-        <div
-          onMouseMove={onMove}
-          className="spotlight-frame relative border border-bone/20 aspect-[4/3] md:aspect-[16/11] overflow-hidden group"
-        >
-          <motion.img
-            style={{ y }}
-            src={project.image}
-            alt={project.title}
-            className="absolute inset-0 w-full h-[115%] object-cover grayscale contrast-125 group-hover:grayscale-0 transition-[filter] duration-700"
-          />
-          <div
-            className={`absolute inset-0 mix-blend-multiply pointer-events-none ${
-              project.tone === "yellow" ? "bg-signal-yellow" : "bg-signal-red"
-            } opacity-90 group-hover:opacity-0 transition-opacity duration-700`}
-          />
-          <span className="absolute top-3 left-3 font-mono text-[10px] tracking-widest text-ink bg-bone px-2 py-1 z-10">
-            {project.n}
-          </span>
-          <span className="absolute bottom-3 right-3 font-mono text-[10px] tracking-widest text-bone/90 z-10">
-            /* HOVER */
-          </span>
-        </div>
+        {isDual ? (
+          <div className="flex gap-3 md:gap-4">
+            {project.images.map((src, idx) => (
+              <motion.div
+                key={idx}
+                style={{ y: idx === 0 ? y : undefined }}
+                className="flex-1 relative border border-bone/20 overflow-hidden group aspect-[9/16]"
+              >
+                <img
+                  src={src}
+                  alt={`${project.title} ${idx + 1}`}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                {idx === 0 && (
+                  <span className="absolute top-3 left-3 font-mono text-[10px] tracking-widest text-ink bg-bone px-2 py-1 z-10">
+                    {project.n}
+                  </span>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <div className="relative border border-bone/20 overflow-hidden group aspect-[4/3] md:aspect-[16/11]">
+            <motion.img
+              style={{ y }}
+              src={project.images[0]}
+              alt={project.title}
+              className="absolute inset-0 w-full h-[115%] object-cover transition-[filter] duration-700"
+            />
+            <span className="absolute top-3 left-3 font-mono text-[10px] tracking-widest text-ink bg-bone px-2 py-1 z-10">
+              {project.n}
+            </span>
+            <span className="absolute bottom-3 right-3 font-mono text-[10px] tracking-widest text-bone/90 z-10">
+              /* HOVER */
+            </span>
+          </div>
+        )}
       </motion.div>
     </motion.article>
   );
