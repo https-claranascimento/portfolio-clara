@@ -3,8 +3,7 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { ArrowDownRight } from "lucide-react";
 import KineticText from "@/components/KineticText";
 
-const PORTRAIT =
-  "https://images.unsplash.com/photo-1748015879337-ef95556c3749?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwzfHxjcmVhdGl2ZSUyMGRlc2lnbmVyJTIwcG9ydHJhaXQlMjBzdHVkaW98ZW58MHx8fHwxNzg0NzU4MzkyfDA&ixlib=rb-4.1.0&q=85";
+const PORTRAIT = "/images/WhatsApp_Image_2026-07-23_at_10.19.33_1 copy.png";
 
 export default function Hero() {
   const containerRef = useRef(null);
