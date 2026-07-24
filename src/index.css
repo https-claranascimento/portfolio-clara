@@ -77,6 +77,29 @@ html.lenis, html.lenis body { height: auto; }
   to { transform: translateX(-50%); }
 }
 
+@keyframes marquee-ltr {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes marquee-rtl {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+.carousel-track-ltr {
+  display: inline-flex;
+  animation: marquee-ltr var(--carousel-speed, 35s) linear infinite;
+  will-change: transform;
+}
+.carousel-track-rtl {
+  display: inline-flex;
+  animation: marquee-rtl var(--carousel-speed, 35s) linear infinite;
+  will-change: transform;
+}
+.carousel-track-ltr:hover,
+.carousel-track-rtl:hover {
+  animation-play-state: paused;
+}
+
 .blink-dot {
   display: inline-block;
   width: 10px;
