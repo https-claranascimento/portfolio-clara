@@ -103,12 +103,12 @@ function ProjectCard({ project, i }) {
               <motion.div
                 key={idx}
                 style={{ y: idx === 0 ? y : undefined }}
-                className="flex-1 relative border border-bone/20 overflow-hidden group aspect-[9/16]"
+                className="flex-1 relative border border-bone/20 overflow-hidden group aspect-[9/16] bg-ink"
               >
                 <img
                   src={src}
                   alt={`${project.title} ${idx + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                 />
                 {idx === 0 && (
                   <span className="absolute top-3 left-3 font-mono text-[10px] tracking-widest text-ink bg-bone px-2 py-1 z-10">
@@ -119,12 +119,11 @@ function ProjectCard({ project, i }) {
             ))}
           </div>
         ) : (
-          <div className="relative border border-bone/20 overflow-hidden group aspect-[4/3] md:aspect-[16/11]">
-            <motion.img
-              style={{ y }}
+          <div className="relative border border-bone/20 overflow-hidden group aspect-[4/3] md:aspect-[16/11] bg-ink">
+            <img
               src={project.images[0]}
               alt={project.title}
-              className="absolute inset-0 w-full h-[115%] object-cover transition-[filter] duration-700"
+              className="absolute inset-0 w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
             />
             <span className="absolute top-3 left-3 font-mono text-[10px] tracking-widest text-ink bg-bone px-2 py-1 z-10">
               {project.n}
