@@ -19,6 +19,11 @@ const carousels = [
       "/images/carrossel-whatsapp/Group_5.png",
       "/images/carrossel-outros/Frame_23.png",
       "/images/carrossel-instagram/Frame_16.png",
+      "/images/carrossel-whatsapp/Group_51.png",
+      "/images/carrossel-whatsapp/Group_48.png",
+      "/images/carrossel-whatsapp/CONFIRMAÇÃO_Atlan_(3)_2.png",
+      "/images/carrossel-whatsapp/Group_58.png",
+      "/images/carrossel-whatsapp/Group_6.png",
     ],
   },
   {
@@ -76,7 +81,7 @@ function Carousel({ carousel }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="font-mono text-sm text-bone/70 max-w-[52ch] mt-8 md:mt-10 leading-relaxed"
+        className="font-mono text-sm text-bone/70 max-w-[52ch] mt-8 md:mt-10 leading-relaxed text-center mx-auto"
       >
         {carousel.description}
       </motion.p>
