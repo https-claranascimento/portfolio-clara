@@ -12,6 +12,13 @@ const carousels = [
       "/images/carrossel-whatsapp/Group_12.png",
       "/images/carrossel-whatsapp/Group_59.png",
       "/images/Group_53.png",
+      "/images/carrossel-whatsapp/Group_18.png",
+      "/images/carrossel-whatsapp/Group_115.png",
+      "/images/carrossel-whatsapp/casa_jobim.png",
+      "/images/carrossel-whatsapp/agenda_1_(v1_-_3_divisorias).png",
+      "/images/carrossel-whatsapp/Group_5.png",
+      "/images/carrossel-outros/Frame_23.png",
+      "/images/carrossel-instagram/Frame_16.png",
     ],
   },
   {
@@ -23,16 +30,7 @@ const carousels = [
     images: [
       "/images/Instagram_story_-_33.png",
       "/images/Instagram_story_-_7.png",
-      "/images/carrossel-instagram/Frame_16.png",
     ],
-  },
-  {
-    title: "OUTROS",
-    description:
-      "Trabalhos que ficam fora do WhatsApp e do Instagram, mas que também merecem destaque. Projetos variados de identidade visual, campanhas e direção de arte que conversam entre formatos e meios.",
-    direction: "ltr",
-    speed: "50s",
-    images: ["/images/carrossel-outros/Frame_23.png"],
   },
 ];
 
@@ -43,15 +41,15 @@ function Carousel({ carousel }) {
 
   return (
     <div className="mb-20 md:mb-28">
-      <motion.p
+      <motion.h3
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="font-mono text-sm text-bone/70 max-w-[52ch] mb-10 md:mb-14 leading-relaxed"
+        className="font-display uppercase text-3xl md:text-5xl text-bone mb-8 md:mb-10 text-center"
       >
-        {carousel.description}
-      </motion.p>
+        {carousel.title}
+      </motion.h3>
 
       <div className="relative overflow-hidden">
         <div
@@ -73,15 +71,15 @@ function Carousel({ carousel }) {
         </div>
       </div>
 
-      <motion.h3
+      <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="font-display uppercase text-3xl md:text-5xl text-bone mt-8 md:mt-10 text-center"
+        className="font-mono text-sm text-bone/70 max-w-[52ch] mt-8 md:mt-10 leading-relaxed"
       >
-        {carousel.title}
-      </motion.h3>
+        {carousel.description}
+      </motion.p>
     </div>
   );
 }
