@@ -35,6 +35,7 @@ const carousels = [
     images: [
       "/images/Instagram_story_-_33.png",
       "/images/Instagram_story_-_7.png",
+      "/images/carrossel-instagram/Instagram_post_-_14.png",
     ],
   },
 ];
@@ -64,12 +65,12 @@ function Carousel({ carousel }) {
           {items.map((src, idx) => (
             <div
               key={idx}
-              className="relative shrink-0 w-[78vw] sm:w-[46vw] md:w-[34vw] lg:w-[26vw] mx-2 md:mx-3 border border-bone/20 overflow-hidden bg-ink aspect-[4/5]"
+              className="shrink-0 w-[78vw] sm:w-[46vw] md:w-[34vw] lg:w-[26vw] mx-2 md:mx-3 border border-bone/20 overflow-hidden"
             >
               <img
                 src={src}
                 alt={`${carousel.title} ${idx + 1}`}
-                className="w-full h-full object-contain"
+                className="w-full h-auto block"
               />
             </div>
           ))}
