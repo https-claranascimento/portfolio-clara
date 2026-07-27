@@ -21,7 +21,7 @@ const carousels = [
       "/images/carrossel-instagram/Frame_16.png",
       "/images/carrossel-whatsapp/Group_51.png",
       "/images/carrossel-whatsapp/Group_48.png",
-      "/images/carrossel-whatsapp/CONFIRMAÇÃO_Atlan_(3)_2.png",
+      "/images/carrossel-whatsapp/confirmacao-atlan-3-2.png",
       "/images/carrossel-whatsapp/Group_58.png",
       "/images/carrossel-whatsapp/Group_6.png",
     ],
@@ -36,6 +36,11 @@ const carousels = [
       "/images/Instagram_story_-_33.png",
       "/images/Instagram_story_-_7.png",
       "/images/carrossel-instagram/Instagram_post_-_14.png",
+      "/images/carrossel-instagram/Instagram_post_-_6.png",
+      "/images/carrossel-instagram/Instagram_story_-_1.png",
+      "/images/carrossel-instagram/Instagram_story_-_40.png",
+      "/images/carrossel-instagram/Instagram_story_-_41.png",
+      "/images/carrossel-instagram/Instagram_story_-_5.png",
     ],
   },
 ];
@@ -65,12 +70,13 @@ function Carousel({ carousel }) {
           {items.map((src, idx) => (
             <div
               key={idx}
-              className="shrink-0 w-[78vw] sm:w-[46vw] md:w-[34vw] lg:w-[26vw] mx-2 md:mx-3 border border-bone/20 overflow-hidden"
+              className="shrink-0 w-[78vw] sm:w-[46vw] md:w-[34vw] lg:w-[26vw] mx-2 md:mx-3 flex items-center"
             >
               <img
                 src={src}
                 alt={`${carousel.title} ${idx + 1}`}
                 className="w-full h-auto block"
+                loading="lazy"
               />
             </div>
           ))}
